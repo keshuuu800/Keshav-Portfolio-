@@ -1,47 +1,12 @@
 import FadeIn from './FadeIn';
 import ContactButton from './ContactButton';
-import ThemeToggle from './ThemeToggle';
-import ResumeButton from './ResumeButton';
 import AvatarPortrait from './AvatarPortrait';
-
-const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
-];
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col" style={{ minHeight: '100vh', overflow: 'hidden' }}>
-      {/* Navbar */}
-      <FadeIn
-        delay={0}
-        y={-20}
-        as="nav"
-        className="relative z-20 flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8 gap-4"
-      >
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 sm:gap-x-8 md:gap-x-10">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-medium uppercase tracking-wider text-xs sm:text-sm md:text-base transition-opacity duration-200 hover:opacity-70"
-              style={{ color: 'var(--text)' }}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center gap-3 sm:gap-4">
-          <ResumeButton />
-          <ThemeToggle />
-        </div>
-      </FadeIn>
-
+    <section className="relative flex flex-col justify-center pt-24 md:pt-28" style={{ minHeight: '100vh', overflow: 'hidden' }}>
       {/* Two-column grid: text left, avatar right */}
-      <div className="hero-grid relative flex-1 px-6 md:px-10 py-10 md:py-12">
+      <div className="hero-grid relative flex-1 px-6 md:px-10 py-10 md:py-12 items-center">
         {/* Left column */}
         <div
           className="flex flex-col items-center text-center md:items-start md:text-left gap-6 min-w-0"

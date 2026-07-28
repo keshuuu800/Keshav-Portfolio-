@@ -45,12 +45,7 @@ export default function ContactSection() {
     >
       <div className="max-w-4xl mx-auto flex flex-col gap-12">
         <FadeIn delay={0} y={40}>
-          <span
-            className="uppercase tracking-widest text-xs sm:text-sm opacity-50 block mb-4"
-            style={{ color: 'var(--text)' }}
-          >
-            06 — Contact
-          </span>
+
           <h2
             className="hero-heading font-black uppercase leading-[0.9] tracking-tight"
             style={{ fontSize: 'clamp(2.75rem, 11vw, 130px)' }}
