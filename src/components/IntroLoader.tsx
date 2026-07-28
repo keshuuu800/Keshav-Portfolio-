@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const GREETINGS = ['Hello', 'Namaste', 'Bonjour', 'Hola', 'こんにちは', 'Ciao', "Hi, I'm Keshav"];
+const GREETINGS = ['Hello', 'Namaste', 'Bonjour', 'Hola', 'こんにちは', 'Ciao', "Hi, I'm Keshav Gupta"];
 const STEP_MS = 520;
 
 interface IntroLoaderProps {
