@@ -1,10 +1,8 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useEffect } from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 export default function AvatarPortrait() {
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
+
 
   // ── Parallax spring ───────────────────────────────────────────────────────
   const rawX = useMotionValue(0);
@@ -31,49 +29,8 @@ export default function AvatarPortrait() {
     <motion.div
       style={{ x: px, y: py, willChange: 'transform', position: 'relative', display: 'inline-flex' }}
     >
-      {/*
-       * ── Atmosphere layer ────────────────────────────────────────────────
-       * Dark mode  : purple-magenta glow behind character
-       * Light mode : soft warm-gray ellipse that "grounds" the dark jacket
-       *              so it transitions naturally into the light background
-       *              instead of appearing as a harsh black silhouette.
-       * Both modes : no border, no box — pure radial gradient only.
-       */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: '-18% -20%',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-          zIndex: 0,
-          transition: 'background 0.45s ease',
-          background: isDark
-            ? 'radial-gradient(ellipse 80% 72% at 50% 54%, rgba(118,33,176,0.30) 0%, rgba(182,0,168,0.13) 44%, transparent 74%)'
-            : 'radial-gradient(ellipse 80% 72% at 50% 54%, rgba(180,170,165,0.38) 0%, rgba(160,152,148,0.18) 44%, transparent 74%)',
-        }}
-      />
 
-      {/*
-       * ── Ground shadow ───────────────────────────────────────────────────
-       * Gives the character a sense of weight / grounding.
-       */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          bottom: '3%',
-          left: '18%',
-          right: '18%',
-          height: '5%',
-          borderRadius: '50%',
-          filter: isDark ? 'blur(26px)' : 'blur(18px)',
-          background: isDark ? 'rgba(0,0,0,0.50)' : 'rgba(60,50,50,0.14)',
-          pointerEvents: 'none',
-          transition: 'background 0.45s ease, filter 0.45s ease',
-          zIndex: 0,
-        }}
-      />
+
 
       {/*
        * ── Avatar image ────────────────────────────────────────────────────
@@ -126,10 +83,7 @@ export default function AvatarPortrait() {
            * unlike box-shadow which wraps the rectangular bounding box.
            * Provides depth without any harsh box effect in light mode.
            */
-          filter: isDark
-            ? 'drop-shadow(0 28px 48px rgba(0,0,0,0.55))'
-            : 'drop-shadow(0 20px 36px rgba(40,30,30,0.22))',
-          transition: 'filter 0.45s ease',
+          filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.30))',
         }}
       />
     </motion.div>
